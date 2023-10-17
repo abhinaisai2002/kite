@@ -25,14 +25,14 @@ export default function NavBar() {
               <Link
                 href='/pricing'
                 className={buttonVariants({
-                  variant: 'ghost',
+                  variant: 'link',
                   size: 'sm',
                 })}>
                 Pricing
               </Link>
               <LoginLink
                 className={buttonVariants({
-                  variant: 'ghost',
+                  variant: 'link',
                   size: 'sm',
                 })}>
                 Sign in
