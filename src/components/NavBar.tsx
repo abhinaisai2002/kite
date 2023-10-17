@@ -27,6 +27,7 @@ export default function NavBar() {
                 className={buttonVariants({
                   variant: 'link',
                   size: 'sm',
+                  className:'text-black'
                 })}>
                 Pricing
               </Link>
@@ -34,6 +35,7 @@ export default function NavBar() {
                 className={buttonVariants({
                   variant: 'link',
                   size: 'sm',
+                  className:'text-black'
                 })}>
                 Sign in
               </LoginLink>
