@@ -7,7 +7,14 @@ import { httpBatchLink } from "@trpc/client";
 
 const Providers = ({children}:PropsWithChildren) => {
 
-    const [queryClient] = React.useState(() => new QueryClient());
+    const [queryClient] = React.useState(() => new QueryClient({
+        defaultOptions: {
+            queries: {
+                retry: false,
+                
+            }
+        }
+    }));
 
     const [trpcClient] = React.useState(() => trpc.createClient({
         links: [
