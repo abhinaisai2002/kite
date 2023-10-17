@@ -10,7 +10,9 @@ import { Cloud } from "lucide-react";
 
 
 const UploadDropzone = () => {
-  return <Dropzone multiple={false}>
+  return <Dropzone multiple={false} onDrop={(acceptedFile) => {
+    
+  }}>
     {({ getRootProps, getInputProps, acceptedFiles }) => (
       <div
         {...getRootProps()}
