@@ -3,7 +3,7 @@
 import React, { PropsWithChildren } from 'react'
 import UploadButton from './UploadButton'
 import { trpc } from '@/app/_trpc/client'
-import { Ghost, MessageSquare, Plus } from 'lucide-react';
+import { Ghost, Loader2, MessageSquare, Plus, Trash } from 'lucide-react';
 import Skeleton from 'react-loading-skeleton';
 import Link from 'next/link';
 import { format } from 'date-fns'
