@@ -4,7 +4,7 @@ interface ChatWrapperProps {
 }
 
 const Page = (props: ChatWrapperProps) => {
-    return <></>
+    return <>Chat Wrapper</>
 }
 
 export default Page;
