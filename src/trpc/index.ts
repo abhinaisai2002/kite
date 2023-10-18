@@ -47,13 +47,13 @@ export const appRouter = router({
     .mutation(async ({ ctx,input }) => {
       const { userId } = ctx;
 
-      const file = db.file.findFirst({
+      const file = await db.file.findFirst({
         where: {
           userId,
-          id:input.key
+          key:input.key
         }
       })
-
+      console.log(file, 56);
       if (!file) throw new TRPCError({ code: "NOT_FOUND" });
 
       return file;
