@@ -44,8 +44,7 @@ export const ourFileRouter = {
         const pageLevelDocs = await loader.load();
 
         const pagesAmt = pageLevelDocs.length;
-
-        const pineconeIndex = pinecone.Index('kite-dev');
+         const pineconeIndex = await pinecone.Index("kite-dev").namespace(metadata.userId);
 
         const embeddings = new OpenAIEmbeddings({
           openAIApiKey:process.env.OPENAI_API_KEY
@@ -57,7 +56,6 @@ export const ourFileRouter = {
           {
             // @ts-ignore
             pineconeIndex:pineconeIndex,
-            namespace: createdFile.id,
           }
         )
 
@@ -72,6 +70,7 @@ export const ourFileRouter = {
 
       }
       catch (err) {
+        console.log(err);
         await db.file.update({
           data: {
             uploadStatus: 'FAILED',
