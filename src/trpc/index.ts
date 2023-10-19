@@ -4,6 +4,7 @@ import { TRPCClientError } from '@trpc/client';
 import { TRPCError } from '@trpc/server';
 import { db } from '@/db';
 import { z } from 'zod';
+import { fi } from 'date-fns/locale';
  
 export const appRouter = router({
 
@@ -79,7 +80,26 @@ export const appRouter = router({
       })
       
       return file;
-    })
+    }),
+  getFileUploadStatus:
+    privateProcedure
+      .input(z.object({ fileId: z.string() }))
+      .mutation(async ({ctx,input}) => {
+        const file = await db.file.findFirst({
+          where: {
+            id: input.fileId,
+            userId:ctx.userId
+          }
+        })
+
+        if (!file) return {
+          status:"PENDING" as const
+        }
+
+        return {
+          status: file.uploadStatus
+        }
+      })
 });
  
 
