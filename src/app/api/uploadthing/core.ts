@@ -44,7 +44,7 @@ export const ourFileRouter = {
         const pageLevelDocs = await loader.load();
 
         const pagesAmt = pageLevelDocs.length;
-         const pineconeIndex = await pinecone.Index("kite-dev").namespace(metadata.userId);
+         const pineconeIndex = pinecone.Index("kite-dev").namespace(createdFile.id);
 
         const embeddings = new OpenAIEmbeddings({
           openAIApiKey:process.env.OPENAI_API_KEY

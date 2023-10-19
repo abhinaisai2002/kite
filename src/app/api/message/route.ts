@@ -45,7 +45,7 @@ export const POST = async (req:NextRequest, res:NextResponse) => {
     openAIApiKey: process.env.OPENAI_API_KEY,
   })
 
-  const pineconeIndex = pinecone.Index("kite-dev").namespace(userId);
+  const pineconeIndex = pinecone.Index("kite-dev").namespace(file.id);
 
   const vectorStore = await PineconeStore.fromExistingIndex(embeddings, {
     pineconeIndex,
