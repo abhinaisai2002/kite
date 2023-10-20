@@ -19,7 +19,7 @@ const Providers = ({children}:PropsWithChildren) => {
     const [trpcClient] = React.useState(() => trpc.createClient({
         links: [
             httpBatchLink({
-                url:'http://localhost:3000/api/trpc'
+                url:'https://kite-theta.vercel.app/api/trpc'
             })
         ]
     }))
