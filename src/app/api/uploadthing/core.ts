@@ -104,7 +104,6 @@ const onUploadComplete = async ({
       embeddings,
       {
         pineconeIndex,
-        namespace: createdFile.id,
       }
     )
 

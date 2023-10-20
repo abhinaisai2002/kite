@@ -6,7 +6,7 @@ import React from 'react'
 import { trpc } from '../_trpc/client';
 import { Loader2 } from 'lucide-react';
 
-export default function page() {
+export default function Page() {
 
   const router = useRouter();
 

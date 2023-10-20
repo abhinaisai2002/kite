@@ -73,7 +73,7 @@ const Page = ({fileId}: ChatWrapperProps) => {
             <p className='text-zinc-500 text-sm'>
               Your{' '}
               <span className='font-medium'>
-                'Free'
+                &apos;Free&apos;
               </span>{' '}
               plan supports up to{' '}
               pages per PDF.
