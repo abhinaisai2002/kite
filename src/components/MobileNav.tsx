@@ -12,6 +12,7 @@ const MobileNav = ({ isAuth }: { isAuth: boolean }) => {
 
   const pathname = usePathname()
 
+  
   useEffect(() => {
     if (isOpen) toggleOpen()
   }, [pathname,isOpen])
